@@ -1,0 +1,22 @@
+﻿@model IdentityRole
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="block-header">
+   <h2>Delete</h2>
+</div>
+
+<form asp-action="Delete" asp-controller="Role">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <label asp-for="Name">Name</label>
+    <input asp-for="Name" class="form-control" />
+    <br />
+    <center>
+        <input type="submit" class="btn btn-danger" value="Delete" />
+        <a asp-action="Index" asp-controller="Role" class="btn btn-warning">return</a>
+    </center>
+</form>
+

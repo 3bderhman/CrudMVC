@@ -1,0 +1,20 @@
+﻿@model DepartmentVM
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="block-header">
+   <h2>Details</h2>
+</div>
+
+<div>
+    <label asp-for="Name">Name</label>
+    <input asp-for="Name" class="form-control" readonly/>
+    <br />
+    <label asp-for="Code">Code</label>
+    <input asp-for="Code" class="form-control" readonly/>
+    <br />
+    <center>
+        <a asp-action="Index" asp-controller="Department" class="btn btn-warning">return</a>
+    </center>
+</div>

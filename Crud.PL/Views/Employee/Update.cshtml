@@ -1,0 +1,75 @@
+﻿@model EmployeeVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@section BootstrapSelect{
+    <link href="/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet">
+}
+
+<div class="block-header">
+   <h2>Edit</h2>
+</div>
+
+<form asp-action="Update" asp-controller="Employee" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <label asp-for="Name">Name</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <br />
+    <label asp-for="Email">Email</label>
+    <input type="email" asp-for="Email" class="form-control" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+    <br />
+    <label asp-for="address">address</label>
+    <input type="text" asp-for="address" class="form-control" />
+    <span asp-validation-for="address" class="text-danger"></span>
+    <br />
+    <label asp-for="Salary">Salary</label>
+    <input type="text" asp-for="Salary" class="form-control" />
+    <span asp-validation-for="Salary" class="text-danger"></span>
+    <br />
+    <label asp-for="HireDate">HireDate</label>
+    <input type="date" asp-for="HireDate" class="form-control" />
+    <span asp-validation-for="HireDate" class="text-danger"></span>
+    <br />
+    <label asp-for="Note">Note</label>
+    <textarea type="text" asp-for="Note" class="form-control" rows=5 ></textarea>
+    <br />
+    <div class="demo-checkbox">
+        <input type="checkbox" checked="checked" asp-for="IsActive" />
+        <label asp-for="IsActive">Active</label>
+    </div>
+    <br />
+    <div>
+        <img src="~/Files/Imgs/@Model.ImgName" width="300" height="350"/>
+    </div>
+    <br />
+    <div>
+        <a href="~/Files/Docs/@Model.FileName" target="_blank" class="form-control">CV</a>
+    </div>
+    <br />
+    <label asp-for="Img">Img</label>
+    <input type="file" asp-for="Img" class="form-control" />
+    <br />
+    <label asp-for="File">File</label>
+    <input type="file" asp-for="File" class="form-control" />
+    <br />
+    <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.DepartmentList">
+        <option>Choose Department</option>
+    </select>
+    <br /><br />
+    <center>
+        <input type="submit" class="btn btn-info" value="Edit" />
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-warning">return</a>
+    </center>
+</form>
+<br /><br />
+
+@section JqueryValidation{
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+

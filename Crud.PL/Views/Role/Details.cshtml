@@ -1,0 +1,22 @@
+﻿@model IdentityRole
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="block-header">
+   <h2>Details</h2>
+</div>
+
+<div>
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <label asp-for="Name">Name</label>
+    <input asp-for="Name" class="form-control" readonly/>
+    <br />
+    <center>
+        <a asp-action="Index" asp-controller="Role" class="btn btn-warning">return</a>
+    </center>
+</div>
+
+
+

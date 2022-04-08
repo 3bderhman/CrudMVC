@@ -1,0 +1,62 @@
+﻿@model EmployeeVM
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="block-header">
+   <h2>Delete</h2>
+</div>
+
+<form asp-action="Delete" asp-controller="Employee">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="ImgName" />
+    <input type="hidden" asp-for="FileName" />
+
+    <label asp-for="Name">Name</label>
+    <input asp-for="Name" class="form-control" readonly/>
+    <br />
+    <label asp-for="Email">Email</label>
+    <input asp-for="Email" class="form-control" readonly/>
+    <br />
+    <label asp-for="address">address</label>
+    <input asp-for="address" class="form-control" readonly/>
+    <br />
+    <label asp-for="Salary">address</label>
+    <input asp-for="Salary" class="form-control" readonly/>
+    <br />
+    <label asp-for="HireDate">address</label>
+    <input asp-for="HireDate" class="form-control" readonly/>
+    <br />
+    <label asp-for="Note">Note</label>
+    <textarea type="text" asp-for="Note" class="form-control" rows=5 readonly></textarea>
+    <br />
+    <div class="demo-checkbox">
+        <input type="checkbox" checked="checked" asp-for="IsActive" />
+        <label asp-for="IsActive">Active</label>
+    </div>
+    <br />
+    <label asp-for="Department.Name">Department</label>
+    <input asp-for="Department.Name" class="form-control" readonly/>
+    <br />
+    <div>
+        <img src="~/Files/Imgs/@Model.ImgName" width="300" height="350"/>
+    </div>
+    <br />
+    <div>
+        <a href="~/Files/Docs/@Model.FileName" target="_blank" class="form-control">CV</a>
+    </div>
+    <br />
+    <br /><br />
+    <center>
+        <input type="submit" class="btn btn-danger" value="Delete" />
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-warning">return</a>
+    </center>
+
+</form>
+<br /><br />
+
+@section JqueryValidation{
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+

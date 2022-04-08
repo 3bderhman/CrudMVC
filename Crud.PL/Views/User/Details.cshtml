@@ -1,0 +1,21 @@
+﻿@model ApplicationUser
+
+@{
+    ViewData["Title"] = "Detail";
+}
+<div class="block-header">
+   <h2>Details</h2>
+</div>
+
+<div>
+    <input type="hidden" asp-for="Id" class="form-control"/>
+    <label asp-for="UserName">UserName</label>
+    <input asp-for="UserName" class="form-control" readonly/>
+    <br />
+    <label asp-for="Email">Email</label>
+    <input asp-for="Email" class="form-control" readonly/>
+    <br />
+    <center>
+        <a asp-action="Index" asp-controller="User" class="btn btn-warning">return</a>
+    </center>
+</div>

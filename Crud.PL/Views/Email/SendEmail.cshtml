@@ -1,0 +1,35 @@
+﻿@model MailVM
+
+@{
+    ViewData["Title"] = "SendMail";
+}
+
+<div class="block-header">
+  <h2>Send Email</h2>
+</div>
+
+<p class="text-primary">@TempData["Mailsucceed"]</p>
+<p class="text-danger">@TempData["Mailfaild"]</p>
+
+<form asp-action="SendEmail" asp-controller="EMail">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <input type="email" asp-for="Email" class="form-control" placeholder="To"/>
+    <span asp-validation-for="Email"></span>
+
+    <input asp-for="Subject" class="form-control" placeholder="Subject"/>
+
+    <textarea asp-for="Body" class="form-control" rows=7 placeholder="Message"></textarea>
+    <br />
+
+    <center>
+        <input type="submit" value="Send" class="btn btn-primary" />
+        <a asp-action="Index" asp-controller="Home" class="btn btn-warning">Return</a>
+    </center>
+</form>
+<br /><br />
+
+@section JqueryValidation{
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
