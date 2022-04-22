@@ -40,7 +40,7 @@ namespace Crud.PL.Controllers
                     var result = await manger.CreateAsync(user, model.Password);
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Department");
                     }
                     else
                     {
@@ -77,7 +77,7 @@ namespace Crud.PL.Controllers
                         var result = await signInManager.PasswordSignInAsync(User, model.Password, model.RememberMe, false);
                         if (result.Succeeded)
                         {
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("Index", "Department");
                         }
                         else
                         {

@@ -309,14 +309,8 @@
                     @if(singin.IsSignedIn(User) && User.IsInRole("SuberAdmin"))
                     {
                         <li class="active">
-                            <a asp-action="Index" asp-controller="Home">
-                                <i class="material-icons">home</i>
-                                <span>Home</span>
-                            </a>
-                        </li>
-                        <li>
                             <a href="javascript:void(0);" class="menu-toggle">
-                                <i class="material-icons">library_books</i>
+                                <i class="material-icons">home</i>
                                 <span>Department</span>
                             </a>
                             <ul class="ml-menu">
